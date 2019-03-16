@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+<script>
+function myCreateFunction() {
+  var table = document.getElementById("TimeTable");
+  var time = document.getElementById("cTimeID");
+  var timeval = time.selectedIndex;
+  var row = table.insertRow(-1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = "hi"
+  var timecell = table.rows[0].cells[0];
+  timecell.innerHTML = "eodkk";
+}
+</script>
+<body>
+	<button onclick="myCreateFunction()">
+		hi pls press
+	</button>
+	<table border =1 id="TimeTable">
+		<tr>
+			<td>
+				hi
+			</td>
+			<td>
+				yo
+			</td>
+		</tr>
+		<tr>
+			<td>
+				fck
+			</td>
+			<td>
+				me
+			</td>
+		</tr>
+	</table>
+	<select id="cTimeID">
+		<option value="0">8-9</option>
+		<option value="1">9-10</option>
+	</select>
+</body>
+</html>

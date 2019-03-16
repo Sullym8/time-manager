@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us</title>
+	<style>
+		* {
+			margin: 0px;
+			font-family: product sans;
+			overflow-x: hidden;
+		}
+		.title{
+  			height: 60vh;
+  			width: 100vw;
+
+  			display: flex;
+  			justify-content: center;
+  			align-items: center;
+
+  			text-align: center;
+    		background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(contact-us.jpg);
+    		background-size: 100% auto;
+    		background-position: center top;
+   	 		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		color: white;
+		}
+		.title h1{
+			font-size: 100px;
+			margin: 5px;
+		}
+		.navbar {
+			overflow: hidden;
+  			background-color: #333;
+  			position: fixed; /* Set the navbar to fixed position */
+  			top: 0; /* Position the navbar at the top of the page */
+  			width: 100%; /* Full width */
+		}
+		.navbar a {
+			float: right;
+  			display: inline-block;
+  			color: #f2f2f2;
+  			text-align: center;
+  			font-size: 24px;
+  			padding: 25px 16px;
+  			text-decoration: none;
+  			transition: 0.3s;
+		}
+		.btn {
+			text-decoration: none;
+		}
+		.show2image {
+			display: block;
+			width: 100%
+			height: 50%;
+			margin-right: auto;
+			margin-left: auto;
+			padding-top: 35px;
+			padding: 25px;
+		}
+		div {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		.inputform {
+			text-align: center;
+			vertical-align: middle;
+
+		}
+		.form {
+			font-size: 30px;
+		}
+		input,select, textarea {
+			vertical-align: middle;
+			font-size: 20px;
+		}
+		.form1 {
+			border-radius: 16px;
+			border-style: solid black;
+		}
+		td {
+			margin-top: 16px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="navbar">
+		<a href="about me.html">About</a>
+  		<a href="contact-us.html">Contact Us</a>
+  		<a href="help.html">Help</a>
+  		<a href="main-webpage.html">Home</a>
+	</div>
+    <section class="title">
+        <div class="hero-inner">
+            <h1>Let us know</h1>
+        </div>
+    </section>
+    <main>
+    	<!--<img src="C:\Users\Samar Khan\OneDrive - Pathways Group of Schools\School\Gr10\DD\Final Unit\Cri C\img-arrows.svg" style="display: block;margin-left: auto;margin-right: auto; margin-top: auto; margin-bottom: auto;">-->
+    	<div style="background-color: black; width: 50%; height: 60vh; float: left; background-color: #F1F1F1;">
+    		<h1 style="text-align: center; font-size: 45px; margin-top: 32px;">
+    			Fill out our Form!
+    		</h1>
+    		<p style="text-align: center; font-size: 22px">We will get back to you with our response as soon as we can</p>
+    		<div style="margin-left: 128px; margin-right: 128px; margin-top: 5px; word-wrap: break-word; table-layout: fixed;">
+    			<table border="0" style="width: 95%; margin-left: auto;margin-right: auto;" class="form">
+    				<tr>
+    					<td height="100px" style="text-align: center;">
+    						<div class="form1">
+    						<label>Email:</label>
+    						<input type="text" value="Your Work Email" >
+    					</div>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td style="text-align: center;">
+    						<div class="form1">
+    						<label>Subject</label>
+    						<input type="text" value="A brief description">
+    						</div
+    					</td>
+    				</tr>
+    				<tr>
+    					<td style="text-align: center;">
+    						<div class="form1">
+    						<label>Nature of issue:</label>
+    						<select>
+    							<option>Feedback</option>
+    							<option>Bugs</option>
+    							<option>Other</option>
+    						</select>
+    						</div>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td style="text-align: center;">
+    						<textarea style="width: 100%; height: 200px; font-size: 30px;">Go ahead, we're listening...</textarea>
+    					</td>
+    				</tr>
+    			</table>
+    		</div>
+    	</div>
+
+    	<div style="background-color: white; width: 50%; height: 60vh; float: right; background-color: #333333; color: white;">
+    		<h1 style="text-align: center; font-size: 45px; margin-top: 32px;">Or... Use your phone!</h1>
+    		<p style="text-align: center; font-size: 22px">
+    			With the help of your mobile phone, we have automated the contact process for your conviniece using QR codes
+    		</p>
+    		<p style="text-align: center; font-size: 22px">
+    			Just open the camera of your smartphone and scan the image
+    		</p>
+    			<img src="chartinv.png" rel='nofollow' alt='qr code' class="show2image" width="350px">
+    			<a href='http://www.qrcode-generator.de' border='0' style='cursor:default'  rel='nofollow'></a>
+    	</div>
+    </main>
+</body>
+</html>
+<!--'https://chart.googleapis.com/chart?cht=qr&chl=MATMSG%3ATO%3Acontact.timetop%40services.com%3BSUB%3AFeeback%2FContact%20Request%3BBODY%3ADear%20Time-top%2C%0A%3B%3B&chs=180x180&choe=UTF-8&chld=L|2-->

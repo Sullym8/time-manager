@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title> Time Manager</title>
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+		.title{
+  			height: 100vh;
+  			width: 100vw;
+
+  			display: flex;
+  			justify-content: center;
+  			align-items: center;
+
+  			text-align: center;
+    		background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(image-first.png);
+    		background-size: cover;
+    		background-position: center center;
+   	 		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		color: white;
+		}
+		.title h1{
+			font-size: 100px;
+			margin: 5px;
+		}
+		.btn {
+		    display: block;
+    		width: 250px;
+    		padding: 25px;
+    		color: white;
+    		text-decoration: none;
+    		font-size: 35px;
+    		border: 3px solid white;
+    		transition: 0.2s;	
+		}
+		.select select {
+			display: block;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: 10px;
+			width: 25px;
+			height:
+			color white;
+			background-color: black; 
+		}
+		a.btn:hover {
+			background: #4285F4;
+		}
+		a.btngo:hover {
+			background-color: #00FF40
+		}
+		body {
+			margin: 0px;
+			font-family: product sans;
+			overflow-x: hidden;
+		}
+		.show1 {
+			display: block;
+			width: 100%
+			height: 50%;
+			background-color: #F1F1F1;
+			padding: 25px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.show2 {
+			display: block;
+			width: 100%
+			height: 50%;
+			background-color: #D8D8D8;
+			margin: 0px;
+			padding: 25px;
+		}
+		.show2image {
+			display: block;
+			width: 100%
+			height: 50%;
+			margin-right: auto;
+			margin-left: auto;
+			padding-top: 35px;
+			padding: 25px;
+		}
+		.showplans {
+			/*box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);*/
+			display: block;
+			width: 100%
+			height: 50%;
+			margin-right: auto;
+			margin-left: auto;
+			padding-top: 35px;
+			padding: 25px;
+		}
+		.navbar {
+			overflow: hidden;
+  			background-color: #333;
+  			position: fixed; /* Set the navbar to fixed position */
+  			top: 0; /* Position the navbar at the top of the page */
+  			width: 100%; /* Full width */
+		}
+		.navbar a {
+			float: right;
+  			display: inline-block;
+  			color: #f2f2f2;
+  			text-align: center;
+  			font-size: 24px;
+  			padding: 25px 16px;
+  			text-decoration: none;
+  			transition: 0.3s;
+		}
+		a:hover {
+			background: white:;
+		}
+		.btngo {
+		    display: block;
+    		padding: 25px;
+    		color: black;
+    		background-color: black;
+    		text-decoration: none;
+    		font-size: 35px;
+    		transition: 0.2s;	
+    		border-radius: 32px;
+		}
+		div {
+			overflow: hidden;
+		}
+	</style>
+	</head>
+	<body>
+	<div class="navbar">
+		<a href="about me.html">About</a>
+  		<a href="contact-us.html">Contact Us</a>
+  		<a href="help.html">Help</a>
+  		<a href="">Home</a>
+	</div>
+    <section class="title">
+        <div class="hero-inner">
+            <h1>Forgetting is the Past</h1>
+            <h2>Time management just got better </h2>
+            <table border="0" style="margin-left: auto; margin-right: auto; margin-top: 50px; word-wrap: break-word; table-layout: fixed;">
+            	<tr>
+            		<td style="padding-right: 20px;">
+            			<p style="font-size: 25px;">
+            				Start planning today!     
+            			</p>
+            		</td>
+            		<td style="padding-left: 20px;">
+            			<a class="btn" href="#section2">Sign Me up!</a>
+            		</td>
+            	</tr>
+            </table>
+
+            
+        </div>
+    </section>
+    <main>
+    	<div class="show1">
+    		<img src="icon-schedule.svg" class="show2image">
+    		<p style="text-align: center; font-size: 25px;">Efficent time-management is the number one way to get on top of your game</p>
+    		<p style="text-align: center; font-size: 25px;">With us, you can always achieve your best</p>
+    	</div>
+    	<div class="show2">
+    		<img src="img-calendar.png" class="show2image">
+    		<h1>	</h1>
+    		<p style="text-align: center; font-size: 32px;">With our tool, time-schduing is the easiest it has ever been! </p>
+    		<p style="text-align: center; font-size: 32px;">Be it student, teacher or worker, scheduling time is for you</p>
+    	</div>
+    	<div class="show1">
+    		<h1 style="text-align: center; font-size: 42px;">Schedule</h1>
+    		<img src="img-mapper-bright.png" class="showplans" style="border-radius: 16px;">
+    		<p style="text-align: center; font-size: 32px">Start using today to create effective and helpful plans everyday!</p>
+    	</div>
+    	<div class="show2">
+    		<img src="img-script.svg" class="showplans">
+    		<h1 style="text-align: center; font-size: 42px;">Powerful Editor</h1>
+    		<p style="text-align: center; font-size: 32px"> With the power of JavaScript, acess your data from anywhere</p>
+    		<p style="text-align: center; font-size: 32px">Edit your classes on the fly!</p>	
+    	</div>
+    	<div class="show2" style="background-color: #333333; color: white;">
+    		<h1 style="text-align: center; font-size: 42px;">Dark Mode</h1>
+    		<p style="text-align: center; font-size: 32px">For all those who believe night-time is work-time</p>
+    		<img src="img-mapper-dark.png" class="show2image">
+    	</div>
+    </main>
+    <section id="section2">
+    	<div class="show1">
+    		<h1 style="text-align: center; font-size: 42px;">Start Now</h1>
+    			<p style="text-align: center; font-size: 32px; width: 100%;text-align:center; ">Plan like a pro</p>
+    			<a href="TEST.html" class="btngo" style="margin-right: auto;margin-left: auto; color: white; text-align: center;">Let's Go!</a>		
+    	</div>
+    </section>
+	</body>
+</html>

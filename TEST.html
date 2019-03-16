@@ -1,0 +1,598 @@
+<html>
+<style type="text/css">
+	#leftbar { background-image: linear-gradient(#3A8E98, #72A283); position:absolute; height:95%; width:44%; margin-left: 25px; margin-top: 25px;}
+	#rightbar{ background-image: linear-gradient(#3A8E98, #72A283); position:absolute; height:95%; width:44%; margin-right: 25px; margin-top: 25px;}
+	body {background-color: #F1F1F1; font-family: Product Sans;}
+	*{font-family: Product Sans; font-size: 24;}
+	table.center {
+		color: #607d8b;
+		width: 100%;
+	}
+	table.left {
+		/*margin-left: 25px;
+		margin-right: auto;
+		float: left;
+		background-color: rgba(71, 71, 71, 0);
+		width: 100%;
+		margin-top: 25px;
+		color: #ecf0f1;
+		height: 95%;*/
+		height: 100%;
+		width: 48%
+	}
+	tr.noborder{
+		border-style: none;
+	}
+	div.card {
+		margin-top: 25px;
+		margin-left: 25px;
+		margin-right: 25px;
+		width: 95%%;
+		height: 95%;
+	}
+	.btn {
+  		position: relative;
+  		display: block;
+  		overflow: hidden;
+  		border-width: 0;
+  		outline: none;
+  		border-radius: 2px;
+  		box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  		background-color: rgb(84, 84, 84);
+  		color: #ecf0f1;
+  		transition: background-color .3s;
+  		height: 100%;
+	}
+	.btnadd{
+		position: relative;
+  		display: block;
+  		overflow: hidden;
+  		border-width: 0;
+  		outline: none;
+  		border-radius: 2px;
+  		box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  		background-color: rgba(84, 84, 84,1);
+  		color: #ecf0f1;
+  		transition: background-color .3s;
+  		margin: 5px;
+  		height: 50px;
+  		margin: auto;
+  		width: 75%
+	}
+	.btnmenu
+	{
+		position: relative;
+  		display: block;
+  		overflow: hidden;
+  		border-width: 0;
+  		outline: none;
+  		border-radius: 2px;
+  		box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  		background-color: rgb(84, 84, 84);
+  		color: #ecf0f1;
+  		transition: background-color .3s;
+  		width: 100%;
+  		margin-top: 16px;
+	}
+	td.plan
+	{
+		width: 10%
+	}
+	/*select{
+  	background-color: rgba(71, 71, 71, 0.5);
+    color:#fff;
+    text-shadow:0 1px 0 rgba(0,0,0,0.4);
+	}
+	input {
+  	background-color: rgba(71, 71, 71, 0.5);
+    color:#fff;
+    text-shadow:0 1px 0 rgba(0,0,0,0.4);	
+	}*/
+	/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #3f51b5	; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #000000;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<script>
+	/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+function deleteRow(row)
+{
+    var i=row.parentNode.parentNode.rowIndex;
+    document.getElementById('TimeTable').deleteRow(i);
+}
+function insRow()
+{
+    var x=document.getElementById("TimeTable");
+       // deep clone the targeted row
+    var new_row = x.rows[1].cloneNode(true);
+       // get the total number of rows
+    var len = x.rows.length;
+       // set the innerHTML of the first row 
+    new_row.cells[0].innerHTML = len;
+
+    var cell1 = new_row.insertCell(0);
+	var cell2 = new_row.insertCell(1);
+    x.appendChild( new_row );
+}
+function myCreateFunction() {
+  var subject = document.getElementById("lol").value;
+  var table = document.getElementById("TimeTable");
+  var classname = document.getElementById("classID").value;
+  var color = document.getElementById("ccolID").value;
+  var time = document.getElementById("cTimeID").selectedIndex;
+  var row = table.insertRow(-1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  var cell8 = row.insertCell(7);
+  var cell9 = row.insertCell(8);
+  var cell10 = row.insertCell(9);
+  var div = document.createElement("DIV");
+  cell1.innerHTML = subject;
+  div.innerHTML = classname;
+  div.style.backgroundColor = color;
+  div.style.textAlign = "center";
+  div.setAttribute("class", "w3-card-4");
+  for (var i = 0; i < table.rows.length; i++) {
+  	var createcell = table.rows[i].cells[time+1];
+  };
+  createcell.appendChild(div);
+}
+function getColorFunction() {
+	var colx = document.getElementById("colobj").value;
+	var cell = document.getElementById("TimeTable").getElementsByTagName("td");
+	cell[1].style.backgroundColor = colx ;
+}
+/*function createNewSubject() {
+  var table = document.getElementById("TimeTable");
+  var classname = document.getElementById("classID").value;
+  var color = document.getElementById("ccolID").value;
+  var time = document.getElementById("cTimeID").selectedIndex;
+    for (var i = 0; i < table.rows.length; i++) {
+  	var timecell = table.rows[i].cells[time+1];
+  };
+
+  var div = document.createElement("DIV");
+  div.innerHTML = classname;
+  div.style.backgroundColor = color;
+  div.setAttribute("class" , "w3-card-4");
+  cell1.innerHTML = subject;
+  timecell.appendChild(div);
+}*/
+function flashpls() {
+	var flashit = document.getElementById("flashpls");
+	flashit.focus();
+}
+function appendColumn(){
+	var subtable = document.getElementById("esTable");
+	var table = document.getElementById("TimeTable");
+	var esTable = document.getElementById("esTable");
+	var lastcell = table.rows[0].cells[table.rows[0].cells.length - 1];
+	for (var i = 0; i < table.rows.length; i++) {
+		var newcell = table.rows[9-i].insertCell(-1);
+	}
+	for (var h = 0; h < esTable.rows.length; h++) {
+		subjtable = esTable.rows[h].cells[1].innerText;
+		
+		}
+	newcell.innerText = subjtable;
+	}
+function NewSubject() {
+	var subtable = document.getElementById("esTable");
+	/*Identify the Class Management Table*/
+	var classname = document.getElementById("lol").value;
+	/*Receive the Name of the class from the text box*/
+	var selClass = document.getElementById("selClass");
+	/*Assign a Variable to the class created*/
+	/* Create the Rows, Cells and Columns for storing the data*/
+	var row = subtable.insertRow(-1);
+	var Sno = row.insertCell(0);
+	var subject = row.insertCell(1);
+	Sno.innerHTML = subtable.rows.length-1;
+	subject.innerHTML = classname;
+	var option = document.createElement("option");
+	option.text = classname;
+	selClass.add(option);
+}
+function submitPlan() {
+	var table = document.getElementById("TimeTable");
+	var colorobj = document.getElementById("ccolID").value;
+	var selClass = document.getElementById("selClass").selectedIndex;
+	var time = document.getElementById("cTimeID").selectedIndex;
+	var location = table.rows[time+1].cells[selClass+1];
+	var div = document.createElement("DIV");
+	var text = document.getElementById("SetClassID").value;
+
+	div.innerHTML = text;
+	div.style.color = "white";
+	div.style.textAlign = "center";
+	div.style.borderRadius = "5px";
+	div.style.backgroundColor = colorobj;
+	div.setAttribute("class", "w3-card-4");	
+	location.appendChild(div);
+}
+function deleteColoumn() {
+	var table = document.getElementById("TimeTable");
+	for (var i=0; i<table.rows.length; i++) {
+		console.log("hi");
+		if (table.rows[i].cells.length > 1) {
+			table.rows[i].deleteCell(-1);
+			
+		}
+	}
+}
+function Darkonoff() {
+	var dark = document.getElementById("darkbutton").value; 
+  if(dark == "Off"){
+    document.getElementById("darkbutton").value="On";
+  }else{
+    document.getElementById("darkbutton").value="Off";
+  }
+	}
+</script>
+<script>
+// Create a "close" button and append it to each list item
+
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var newtodo = document.createElement("li");
+  var todoinput = document.getElementById("todoinput").value;
+  var todotext = document.createTextNode(todoinput);
+  newtodo.appendChild(todotext);
+  document.getElementById("todo").appendChild(newtodo);
+  document.getElementById("todoinput").value = "";
+  var crossspan = document.createElement("SPAN");
+  var crosstxt = document.createTextNode("\u00D7");
+  crossspan.className = "close";
+  crossspan.style.float = "right";
+  crossspan.style.marginRight = "16px"
+  crossspan.appendChild(crosstxt);
+  newtodo.appendChild(crossspan);
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+    }
+</script>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="main-webpage.html">Home</a>
+  <a href="">
+  	Dark Mode:
+  	<input type="button" value="Off" id="darkbutton" onclick="Darkonoff()">	
+  </a>
+  <a href="contact-us.html">Contact Us</a>
+</div>
+<body id="body">
+	<title> Schedule Helper </title>
+	<link rel="stylesheet" href="w3.css">
+
+	<div class="w3-panel w3-card" style="margin-top: 0px; height: 75px; vertical-align: baseline;background-color: #3f51b5; color: white">
+		<h1>
+			Time-Scheduler
+		</h1>
+		<table>
+			<tr>
+				<td colspan="100">
+					
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="w3-panel w3-card w3-white" style="margin-top: 25px; width: 50%; vertical-align: baseline; float: right; margin-right: 25px; overflow-x: auto;padding: 0px;">
+	<table class="center" border="0" cellspacing="0" style="width: 100%; padding: 0px;">
+		<tbody>
+			<tr style="background-color: #333333; height: 100px; width: 100%; color: white; text-align: center;" >
+				<td colspan="1">
+					<button class="btnadd w3-button w3-hover-black w3-ripple" style="background-color: rgba(84, 84, 84,1);" onclick="appendColumn()">
+						Add Classes
+					</button>
+				</td>
+				<td colspan="3">
+					<button class="btnadd w3-button w3-hover-black w3-ripple" style="background-color: rgba(84, 84, 84,1);" onclick="deleteColoumn()">
+						Delete Row
+					</button>
+				</td>
+				<td colspan="2">
+					<button class="btnadd w3-button w3-hover-black w3-ripple" style="background-color: rgba(84, 84, 84,1);" onclick="save()">
+						Save
+					</button>
+				</td>
+				<td colspan="3">
+					<button class="btnadd w3-button w3-hover-black w3-ripple" style="background-color: rgba(84, 84, 84,1);">
+						Help
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table style="padding: 25px;">
+		<tbody>
+			<tr style="height: 10%; margin-top: 25px">
+				<td width="30%">
+					Day:
+					<select>
+						<option>Monday</option>
+						<option>Tuesday</option>
+						<option>Wednesday</option>
+						<option>Thursday</option>
+						<option>Friday</option>
+						<option>Saturday</option>
+						<option>Sunday</option>
+					</select>
+				</td>
+				<td width="20%">
+					Week: 
+						<select>
+							<option>1</option>
+							<option>2</option>
+						</select>
+				</td>
+				<td>
+					Grade:
+					<select>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>1</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+						<option>11</option>
+						<option>12</option>
+					</select>
+				</td>
+				<td colspan="100%" align="right">
+					Date:
+					<input type="Date" name="dnamef">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table style="margin-top: 16px; text-align: center;word-wrap: break-word;" id="TimeTable" border="0" class="w3-table-all" width="50%">
+		<tr style="vertical-align: text-top; margin-top: 10px">
+			<td>
+				Classes: 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				8 - 9 AM
+			</td>
+		</tr>
+		<tr>
+			<td>
+				9 - 10 AM
+			</td>
+		</tr>
+		<tr>
+			<td>
+				10 - 11 AM
+			</td>
+		</tr>
+		<tr>
+			<td>
+				11 - 12 PM
+			</td>
+		</tr>
+		<tr>
+			<td>
+				12 - 1 PM
+			</td>
+		</tr>
+		<tr>
+			<td>
+				1 - 2 PM
+			</td>
+		</tr>
+		<tr>
+			<td>
+				2 - 3 PM
+			</td>
+		</tr>
+		<tr>
+			<td>
+				3 - 4 PM
+			</td>
+		</tr>
+		<tr>
+			<td>
+				4 - 5 PM
+			</td>
+		</tr>
+	</Table>
+</div>
+	
+		<table class="left">
+			<tr>
+				<td>
+					<div class="w3-panel w3-card card" style="height:125px; background-color: #333333; position: absolute; top: 100px; width: 45%">
+						<button class="btnmenu w3-button w3-hover-black w3-ripple" style="background-color: rgba(84, 84, 84,1);height: 50px; color: white;">
+							<span onclick="openNav()">Menus/Navigations</span>	
+						</button>
+						<h5 style="color:white;">For other important features of this tool</h5>
+					</div>
+				</td>
+			</tr>
+		</table>
+					<div class="w3-panel w3-card-4 w3-white" style="position: absolute; top: 275px; width: 45%; margin-left: 25px; padding: 0px; " id="flashpls">
+								<div class="" style="margin-top: 0px; height: 75px; vertical-align: baseline; text-align: center; font-size: 40px; background-color:#333333; color: white; ">Editor</div>
+						<div style="padding: 25px;">
+						<h2>
+							Create/Manage Classes:
+						</h2>
+						<table style="padding: 16px;" border="0" >
+							<tr>
+								<td width="25%">
+									New Class Entry:
+								</td>
+								<td>
+									<input type="text" id="lol" required="">
+								</td>
+								<td width="100%">
+									<button id="sSubj" onclick="NewSubject()" class="btnadd w3-button w3-hover-black w3-ripple" style="background-color: rgba(84, 84, 84,1); color: white; position: absolute; right: 75px; top: 188px; width: 200px;">
+										Submit!
+									</button>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									<h3>Existing Classes</h3>
+								</td>
+							</tr>
+						</table>
+						<table width="100%" class="w3-table-all w3-card-4" id="esTable" border="1" style="color: black;">
+							<tr>
+								<td>
+									Sr No.
+								</td>
+								<td>
+									Class Name
+								</td>
+							</tr>
+						</table>
+							<h2>
+								Lesson Plans
+							</h2>
+							<div style="padding: 16px;">
+							<table width="100%" class="w3-card-4" style="" border="0" cellpadding="10">
+								<tr>
+									<td>
+										Timings:
+										<select id="cTimeID">
+											<option value="0">8-9</option>
+											<option value="1">9-10</option>
+											<option value="2">10-11</option>
+											<option value="3">11-12</option>
+											<option value="4">12-1</option>
+											<option value="5">1-2</option>
+											<option value="6">2-3</option>
+											<option value="7">3-4</option>
+											<option value="8">4-5</option>
+										</select>
+									</td>
+									<td style="float: right;">
+										Subject:
+										<select id="selClass">Choose a subject</select>
+									</td>
+								</tr>
+								<tr>
+									<td style="vertical-align: middle;">
+										<span>Pick a colour</span>
+										<input type="color" id="ccolID" style="height: 45px; width: 50px; vertical-align: middle;">
+									</td>
+									<td>
+										<button id="timeblock" class="btnadd w3-button w3-hover-black w3-ripple" style="margin-top: 0px; height: 45px; vertical-align: middle; text-align: center; font-size: 25px; background-color:#303030; color: white; float: right; " onclick="submitPlan()">Submit!</button>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										Please give some details about this class:
+										<input type="text" id="SetClassID" style="text-align: center; float: right;">
+									</td>
+								</tr>
+							</table>
+						</div>
+							<table style="margin-top: 16px">
+								<tr>
+									<td>
+										In case something goes wrong, please press this:
+										<button onclick="window.location.reload()">Reset</button>
+									</td>
+								</tr>
+							</table>
+							</div>
+					</div>
+					<div style="margin-left: 25px; width: 45%; vertical-align: baseline; text-align: center; font-size: 40px; background-color:#333333; color: white; margin-top: 0px;">
+						<div>
+							<h2 style="color: white; margin: 0px;">To-Do List</h2>	
+						</div>
+					</div>
+					<div style="margin-top: 0px; margin-left: 25px; background-color: white; width: 45%; margin-bottom: 25px;" class="w3-card-4">
+						<div style="">
+						<input type="text" id="todoinput" placeholder="Title..." style="margin: 16px;">
+						<button onclick="newElement()" style="width: 30%; position: relative;overflow: hidden;border-width: 0;outline: none;border-radius: 2px;box-shadow: 0 1px 4px rgba(0, 0, 0, .6);	background-color: rgba(84, 84, 84,1);color: #ecf0f1;transition: background-color .3s;height: 50px;float: right; margin: 16px" class="">Add To-Do plan</button>
+						</div>
+					<div style="margin-top: 0px; background-color: #F1F1F1; width: 100%; margin-bottom: 25px;">
+						<ul class="todo" id="todo">
+						</ul>
+					</div>
+					</div>
+
+	
+</body>
+</html>

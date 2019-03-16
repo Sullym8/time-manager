@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Help Center</title>
+	<style>
+		* {
+			margin: 0px;
+			font-family: product sans;
+			overflow-x: hidden;
+		}
+		.title{
+  			height: 50vh;
+  			width: 100vw;
+
+  			display: flex;
+  			justify-content: center;
+  			align-items: center;
+
+  			text-align: center;
+    		background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(help-image.jpg);
+    		background-size: 100% auto;
+    		background-position: center top;
+   	 		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		color: white;
+		}
+		.title h1{
+			font-size: 100px;
+			margin: 5px;
+		}
+		.navbar {
+			overflow: hidden;
+  			background-color: #333;
+  			position: fixed; /* Set the navbar to fixed position */
+  			top: 0; /* Position the navbar at the top of the page */
+  			width: 100%; /* Full width */
+		}
+		.navbar a {
+			float: right;
+  			display: inline-block;
+  			color: #f2f2f2;
+  			text-align: center;
+  			font-size: 24px;
+  			padding: 25px 16px;
+  			text-decoration: none;
+  			transition: 0.3s;
+		}
+		.btn {
+			text-decoration: none;
+		}
+		.show2image {
+			display: block;
+			width: 100%
+			height: 50%;
+			margin-right: auto;
+			margin-left: auto;
+			padding-top: 35px;
+			padding: 25px;
+		}
+		div {
+			padding-top: 5px;
+			padding-bottom: 5px;
+			overflow-x: hidden;
+		}
+		.inputform {
+			text-align: center;
+			vertical-align: middle;
+
+		}
+		.form {
+			font-size: 30px;
+		}
+		input,select, textarea {
+			vertical-align: middle;
+			font-size: 20px;
+		}
+		.form1 {
+			border-radius: 16px;
+			border-style: solid black;
+		}
+		td {
+			margin-top: 16px;
+		}
+		.grow {
+			transition: all 0.2s ease-in-out;
+		}
+		.grow:hover {
+			transform: scaleY(1.1);
+			border-style: solid black;
+		}
+		h1, h2 {
+			padding: 16px;
+		}
+		.show1 {
+			display: block;
+			width: 100%
+			height: 50%;
+			background-color: #F1F1F1;
+			padding: 25px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.show2 {
+			display: block;
+			width: 100%
+			height: 50%;
+			background-color: #D8D8D8;
+			margin: 0px;
+			padding: 25px;
+		}
+		img {
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		.FAQ {
+			fill: white;
+		}
+		::-webkit-scrollbar {
+width: 0px; /* remove scrollbar space /
+background: transparent; / optional: just make scrollbar invisible /
+}
+	</style>
+</head>
+<body>
+	<div class="navbar">
+		<a href="about me.html">About</a>
+  		<a href="contact-us.html">Contact Us</a>
+  		<a href="">Help</a>
+  		<a href="main-webpage.html">Home</a>
+	</div>
+    <section class="title">
+        <div class="hero-inner">
+            <h1>Help Center</h1>
+            <h2>We're here to help you get back on track</h2>
+            <h2 style="padding-top: 25px;">First, choose the type of problem you're facing</h2>
+        </div>
+    </section>
+    <main>
+    	<!--<img src="C:\Users\Samar Khan\OneDrive - Pathways Group of Schools\School\Gr10\DD\Final Unit\Cri C\img-arrows.svg" style="display: block;margin-left: auto;margin-right: auto; margin-top: auto; margin-bottom: auto;">-->
+    	<div style="background-color: black; width: 100%; height: 100vh; background-color: #F1F1F1;" class="">
+    		<h1 style="text-align: center; font-size: 45px; margin-top: 32px;">
+    			View Documentation
+    		</h1>
+    		<img src="baseline-class-24px.svg" style="margin-right: auto;margin-left: auto; display: block; margin-bottom: 25px;">
+    		<div class="show2">
+    		<h1 style="padding: 25px;">Getting Started</h1>
+    		<h2 >To start off, this web-application's purpose is to offer a user a range of tools with which they can excersize their time-management skills
+    	By using this tool frequently, the user's tasks are simplified to a great extent. Thus, they user can easily eliminate workplace stress and in turn, improve their productivity</h2>
+    	</div>
+    	<div class="show1">
+    		<h1 style="padding: 25px;">The Editor</h1>
+    		<h2>Whn you first open the web-aplication, you will see two panes, One labelled 'Editor' while the other features a table. The Editor pane is where we will focus now. </h2>
+    		<h2>The first element we see is a Textbox. Over here, we add the name of the lesson that we must add. It then relays the information to the table below where the lessons are stored.</h2>
+    		<h2>Moving along, we come across the 'Lesson Plans' editor. Here, you can add a custom name to your class (examples include room number or teacher names). The time of your lessons is also decided here along with the custom color feature.</h2>
+    		<img src="help-editor-image.jpg">
+    	</div>
+    	<div class="show2">
+    		<h1 style="padding: 25px;" class="show2">Add A class</h1>
+    		<h2>
+    			Creating a class is extremely intuituve in our web-application. To start off, type the name of your desired class in the textbox under 'New Class Entry'. Then, press the neighbouring submit button. After the class loads up in the Existing Classes table, go over to the 'Time Table' pane and press the first Button named: 'Add Plan'. The class will now appear in the first row of the table
+    		</h2>
+    		<img src="Add-class-1.JPG">
+    		<img src="add-class 1.jpg">
+    	</div>
+    	<div class="show1">
+    		<h1 style="padding: 25px;" class="show1">Remove Classes</h1>
+    		<h2>
+    			Deleting a Plan is easier that adding one! Navigate to the 'Time Table' pane and press the 'Delete Coloumn' button. Voila! the class is gone!
+    		</h2>
+    		<img src="Add-class-1.JPG">
+    	</div>
+    	<div class="show2">
+    		<h1 style="padding: 25px;" class="show2">Customizing Plan</h1>
+    		<h2>In today's world, where every application/website provides readymade solutions, you may feel the urge to personalize your solution. Thus, with that in mind, we added a customization feature to the web-application which allows you to change the indivual plans.
+    		</h2>
+    		<h2>
+    			To start off, the user must pick a suitable time for their plan as well as specify the subject discipline they are applying this new plan to. This is done using the Timings and subject drop-downs.
+    			After that, the user can edit the colour that is preffered on the indivual plan using the interactive colour wheel. Finally, the user can input a custome text to display on the plan such as a Room Number or the Requirements for the plan.
+    		</h2>
+    		<img src="">
+    	</div>
+    		<h1 style="padding: 25px;" class="show1">Errors</h1>
+    	</div>
+    	<div style="background-color: white; width: 100%; height: 100vh; background-color: #333333; color: white;" class="">
+    		<h1 style="text-align: center; font-size: 45px; margin-top: 32px;">Common Queries</h1>
+    		<img src="baseline-help-24px.svg" class="FAQ" style="margin-right: auto;margin-left: auto; display: block;">
+    	</div>
+    </main>
+</body>
+</html>
+<!--'https://chart.googleapis.com/chart?cht=qr&chl=MATMSG%3ATO%3Acontact.timetop%40services.com%3BSUB%3AFeeback%2FContact%20Request%3BBODY%3ADear%20Time-top%2C%0A%3B%3B&chs=180x180&choe=UTF-8&chld=L|2-->
