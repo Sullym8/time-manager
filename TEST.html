@@ -332,6 +332,8 @@ function newElement() {
   	Dark Mode:
   	<input type="button" value="Off" id="darkbutton" onclick="Darkonoff()">	
   </a>
+  <a href="hlp.html">Help</a>
+  <a href="about me.html">About</a>
   <a href="contact-us.html">Contact Us</a>
 </div>
 <body id="body">
@@ -371,7 +373,7 @@ function newElement() {
 				</td>
 				<td colspan="3">
 					<button class="btnadd w3-button w3-hover-black w3-ripple" style="background-color: rgba(84, 84, 84,1);">
-						Help
+						<a href="help.html" style="text-decoration: none;">Help</a>
 					</button>
 				</td>
 			</tr>
@@ -489,7 +491,7 @@ function newElement() {
 				</td>
 			</tr>
 		</table>
-					<div class="w3-panel w3-card-4 w3-white" style="position: absolute; top: 275px; width: 45%; margin-left: 25px; padding: 0px; " id="flashpls">
+					<div class="w3-panel w3-card-4 w3-white" style="position: absolute; top: 275px; width: 45%; margin-left: 25px; padding: 0px; margin-bottom: 16px; " id="flashpls">
 								<div class="" style="margin-top: 0px; height: 75px; vertical-align: baseline; text-align: center; font-size: 40px; background-color:#333333; color: white; ">Editor</div>
 						<div style="padding: 25px;">
 						<h2>
@@ -567,31 +569,43 @@ function newElement() {
 								</tr>
 							</table>
 						</div>
-							<table style="margin-top: 16px">
+							<table style="margin-top: 16px" border="0" width="100%">
 								<tr>
 									<td>
 										In case something goes wrong, please press this:
 										<button onclick="window.location.reload()">Reset</button>
 									</td>
 								</tr>
-							</table>
-							</div>
-					</div>
-					<div style="margin-left: 25px; width: 45%; vertical-align: baseline; text-align: center; font-size: 40px; background-color:#333333; color: white; margin-top: 0px;">
+								<tr>
+									<td width="100%">
+					<div style="width: 100%;text-align: center; font-size: 40px; background-color:#333333; color: white;position: relative;">
 						<div>
 							<h2 style="color: white; margin: 0px;">To-Do List</h2>	
 						</div>
 					</div>
-					<div style="margin-top: 0px; margin-left: 25px; background-color: white; width: 45%; margin-bottom: 25px;" class="w3-card-4">
+				</td>
+			</tr>
+			<tr>
+				<td >
+					<div style="margin-top: 0px; background-color: white; width: 100%;" class="w3-card-4">
 						<div style="">
 						<input type="text" id="todoinput" placeholder="Title..." style="margin: 16px;">
-						<button onclick="newElement()" style="width: 30%; position: relative;overflow: hidden;border-width: 0;outline: none;border-radius: 2px;box-shadow: 0 1px 4px rgba(0, 0, 0, .6);	background-color: rgba(84, 84, 84,1);color: #ecf0f1;transition: background-color .3s;height: 50px;float: right; margin: 16px" class="">Add To-Do plan</button>
+						<button onclick="newElement()" style="width: 30%; position: relative;border-width: 0;border-radius: 2px;box-shadow: 0 1px 4px rgba(0, 0, 0, .6);background-color: rgba(84, 84, 84,1);color: #ecf0f1;height: 50px;" class="">Add To-Do plan</button>
 						</div>
 					<div style="margin-top: 0px; background-color: #F1F1F1; width: 100%; margin-bottom: 25px;">
 						<ul class="todo" id="todo">
 						</ul>
 					</div>
 					</div>
+				</td>
+			</tr>
+					
+									</td>
+								</tr>
+							</table>
+							</div>
+					</div>
+					
 
 	
 </body>
