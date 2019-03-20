@@ -3,7 +3,7 @@
 
 
 @font-face {
-    font-family: 'product_sansregular';
+    font-family: 'product_sans';
     src: url('product_sans_regular-webfont.woff2') format('woff2'),
          url('product_sans_regular-webfont.woff') format('woff');
     font-weight: normal;
